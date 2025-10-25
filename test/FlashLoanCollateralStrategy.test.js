@@ -33,6 +33,10 @@ describe("FlashLoanCollateralStrategy", function () {
             owner.address
         );
 
+        // Fund strategy with WETH to cover flash loan fees (0.05% fee)
+        // For 10 WETH flash loan, fee is 0.005 WETH
+        await weth.mint(strategy.target, ethers.parseEther("1")); // 1 WETH buffer for fees
+
         return { strategy, aavePool, weth, usdc, arbitrageExecutor, owner, user1, user2 };
     }
 
