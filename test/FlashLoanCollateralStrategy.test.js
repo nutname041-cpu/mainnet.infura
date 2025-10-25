@@ -417,6 +417,7 @@ describe("FlashLoanCollateralStrategy", function () {
                 )
             ).to.be.revertedWithCustomError(FlashLoanCollateralStrategy, "InvalidAddress");
 
+            // Owner zero address check happens in Ownable constructor first
             await expect(
                 FlashLoanCollateralStrategy.deploy(
                     aavePool.target,
@@ -424,7 +425,7 @@ describe("FlashLoanCollateralStrategy", function () {
                     usdc.target,
                     ethers.ZeroAddress
                 )
-            ).to.be.revertedWithCustomError(FlashLoanCollateralStrategy, "InvalidAddress");
+            ).to.be.revertedWithCustomError(FlashLoanCollateralStrategy, "OwnableInvalidOwner");
         });
     });
 
