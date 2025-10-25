@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/workspace/cmh6kya3s00ber7i2vbv0sx47/Flash_defi/contracts/FlashLoanCollateralStrategy.sol": {
-      "lastModificationDate": 1761417511371,
-      "contentHash": "da629d0750db2514eaec9bbe2123793a",
+      "lastModificationDate": 1761418015074,
+      "contentHash": "3e9ddeb4d551641e6ab882d382a932e2",
       "sourceName": "contracts/FlashLoanCollateralStrategy.sol",
       "solcConfig": {
         "version": "0.8.20",
