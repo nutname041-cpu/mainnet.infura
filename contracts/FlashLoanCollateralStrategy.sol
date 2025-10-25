@@ -236,11 +236,13 @@ contract FlashLoanCollateralStrategy is IFlashLoanSimpleReceiver, Ownable, Reent
 
         // ============ Step 6: Verify Return ============
         uint256 balanceAfter = IERC20(borrowAsset).balanceOf(address(this));
-        uint256 returnedAmount = balanceAfter - balanceBefore + borrowAmount;
 
         if (balanceAfter < borrowAmount) {
             revert InsufficientReturn(borrowAmount, balanceAfter);
         }
+
+        // Calculate total returned (balance we have now plus what we sent equals what was returned)
+        uint256 returnedAmount = balanceAfter - balanceBefore + borrowAmount;
 
         emit ArbitrageExecuted(targetWallet, borrowAmount, returnedAmount);
 
