@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
   // If someone just opens the link in a browser (GET), show a clean message
   if (req.method === "GET") {
-    return res.status(200).send("!");
+    return res.status(200).send("");
   }
 
   const TARGET =
