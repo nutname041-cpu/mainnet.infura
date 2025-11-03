@@ -6,7 +6,7 @@ export default async function handler(req, res) {
 
   const TARGET =
     process.env.TENDERLY_RPC ||
-    "https://virtual.mainnet.eu.rpc.tenderly.co/6634dcc3-e5ef-48d3-a21b-328a3cfdb6c6--bak";
+    "https://virtual.mainnet.eu.rpc.tenderly.co/6634dcc3-e5ef-48d3-a21b-328a3cfdb6c6";
 
   try {
     const response = await fetch(TARGET, {
